@@ -48,7 +48,7 @@ Lepre aims to be fast and thin and because of that it has some limitations:
 
 ## CSS
 Lepre comes with no CSS by default because rarely the stock design will remain unchanged and I thought that no CSS was better than unused CSS.
-To help with the design, here's the CSS I use in the Demo project.
+To help with the design, here's the CSS I use in the [Demo project](https://pandasekh.github.io/lepre/).
 
 ```css
 .emoji {
