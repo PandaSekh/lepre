@@ -1,6 +1,7 @@
-import React from 'react'
-import styles from './styles.module.css'
+import Emoji from './Emoji';
+import EmojiAdder from './EmojiAdder';
+import EmojiBlock from './EmojiBlock';
+import EmojiCounter from './EmojiCounter';
+import './style.css';
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+export { Emoji, EmojiAdder, EmojiBlock, EmojiCounter };

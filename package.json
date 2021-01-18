@@ -1,6 +1,6 @@
 {
   "name": "lepre",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Lightweight Emoji Picker for React Enthusiasts",
   "author": "PandaSekh",
   "license": "MIT",
@@ -12,7 +12,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
+    "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",

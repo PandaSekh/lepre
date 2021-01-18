@@ -1,10 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-import { ExampleComponent } from 'lepre'
-import 'lepre/dist/index.css'
+import { EmojiBlock } from 'lepre';
+import 'lepre/dist/index.css';
+
+const DEFAULT_EMOJI_OPTIONS = [
+  { emoji: '🐼', label: 'panda' },
+  { emoji: '📞', label: 'cell' },
+];
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
-}
+  return <EmojiBlock emojis={DEFAULT_EMOJI_OPTIONS} />;
+};
 
-export default App
+export default App;
