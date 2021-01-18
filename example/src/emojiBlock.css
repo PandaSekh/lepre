@@ -25,13 +25,6 @@
   display: flex;
 }
 
-.emoji-counter-div {
-  position: absolute;
-  top: -2px;
-  right: 3px;
-  z-index: -5;
-}
-
 .emoji-counter {
   font-weight: bold;
   padding: 2px 5px;
@@ -45,27 +38,18 @@ emoji:active {
   transform: scale(1.1);
 }
 
-.comment-info {
-  margin: auto 0px;
-}
-
-.comment-info-container {
-  height: 40px;
-  display: flex;
-}
-
 .reaction-block {
   display: inline-flex;
   flex-flow: wrap;
 }
 
-.reaction-adder-emoji {
+.emoji-adder {
   user-select: none;
   position: relative;
   display: inline-block;
 }
 
-.emoji-adder-menu-open {
+.emoji-menu-open {
   position: absolute;
   display: flex;
   top: 0px;
@@ -73,11 +57,10 @@ emoji:active {
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #fefefe;
-  flex-wrap: wrap;
   z-index: 10;
-  width: 400%;
+  width: auto;
 }
 
-.emoji-adder-menu-closed {
+.emoji-menu-closed {
   display: none;
 }

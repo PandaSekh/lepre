@@ -16,8 +16,7 @@ export default function EmojiAdder({
   ).map((emoji) => (
     <Emoji
       key={++i}
-      emoji={emoji.emoji}
-      label={emoji.label}
+      emoji={emoji}
       onClick={() => {
         onClick(emoji.emoji);
         toggleOpen();
@@ -36,9 +35,13 @@ export default function EmojiAdder({
 
   return (
     <Fragment>
+      {console.log(emojis.length)}
       {emojis.length > 0 && (
         <span className='emoji-adder' onClick={toggleOpen}>
-          <Emoji emoji={'+'} label='emoji-adder' onClick={toggleOpen} />
+          <Emoji
+            emoji={{ emoji: '+', label: 'emoji-plus' }}
+            onClick={toggleOpen}
+          />
           <EmojiMenu />
         </span>
       )}

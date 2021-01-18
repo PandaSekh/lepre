@@ -1,7 +1,7 @@
 import Emoji from './Emoji';
-import EmojiAdder from './EmojiAdder';
+import EmojiPicker from './EmojiPicker';
 import EmojiBlock from './EmojiBlock';
 import EmojiCounter from './EmojiCounter';
-import './style.css';
 
-export { Emoji, EmojiAdder, EmojiBlock, EmojiCounter };
+export { Emoji, EmojiPicker, EmojiCounter };
+export default EmojiBlock;

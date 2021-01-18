@@ -1,15 +1,13 @@
 import React from 'react';
+import Reactions from './Reactions';
 
-import { EmojiBlock } from 'lepre';
-import 'lepre/dist/index.css';
-
-const DEFAULT_EMOJI_OPTIONS = [
-  { emoji: '🐼', label: 'panda' },
-  { emoji: '📞', label: 'cell' },
-];
-
-const App = () => {
-  return <EmojiBlock emojis={DEFAULT_EMOJI_OPTIONS} />;
-};
-
-export default App;
+export default function App() {
+  return (
+    <div className='comment'>
+      <div>
+        <p>This is a sample comment</p>
+      </div>
+      <Reactions />
+    </div>
+  );
+}

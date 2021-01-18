@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import EmojiAdder from './EmojiAdder';
+import EmojiPicker from './EmojiPicker';
 import EmojiCounter from './EmojiCounter';
 
 export default function EmojiBlock(props) {
@@ -37,13 +37,15 @@ export default function EmojiBlock(props) {
   ));
 
   return (
-    <div className='reaction-block'>
-      {mappedReactions}
-      <EmojiAdder
-        selectedEmojis={emojis}
-        onClick={updateEmojiCount}
-        EMOJI_SELECTION={props.emojis}
-      />
+    <div className='reaction-div'>
+      <div className='reaction-block'>
+        {mappedReactions}
+        <EmojiPicker
+          selectedEmojis={emojis}
+          onClick={updateEmojiCount}
+          EMOJI_SELECTION={props.emojis}
+        />
+      </div>
     </div>
   );
 }

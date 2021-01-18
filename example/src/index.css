@@ -13,3 +13,9 @@ code {
     monospace;
 }
 
+.comment {
+  margin: 50px auto auto auto;
+  border: 1px solid black;
+  width: 70%;
+  padding: 15px
+}
