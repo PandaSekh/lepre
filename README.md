@@ -6,7 +6,7 @@
 
 > 🐰 Lightweight Emoji Picker for React Enthusiasts
 
-Lepre is a thin and lightweight (<1Kb) emoji picker library for React. It's fully customizable and was inspired by Github's comment reactions.
+Lepre is a thin and lightweight (<1Kb) emoji picker library for React. It's fully customizable and was inspired by [Github's reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
 
 ## Install
 
