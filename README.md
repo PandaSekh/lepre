@@ -38,7 +38,7 @@ import React from 'react';
 
 import Reactions from 'lepre';
 
-function Example {
+export default function Example() {
   const DEFAULT_EMOJI_OPTIONS = [
     { emoji: '🐼', label: 'panda' },
     { emoji: '📞', label: 'cell' },
