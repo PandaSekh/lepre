@@ -20,7 +20,7 @@ describe('EmojiPicker', () => {
       <EmojiPicker
         selectedEmojis={emojis}
         onClick={callback}
-        EMOJI_SELECTION={EMOJI_SELECTION}
+        availableEmojis={EMOJI_SELECTION}
       />,
     );
     expect(screen.queryByText('+')).toBeTruthy();
@@ -32,7 +32,7 @@ describe('EmojiPicker', () => {
       <EmojiPicker
         selectedEmojis={emojis}
         onClick={callback}
-        EMOJI_SELECTION={EMOJI_SELECTION}
+        availableEmojis={EMOJI_SELECTION}
       />,
     );
     expect(
@@ -46,7 +46,7 @@ describe('EmojiPicker', () => {
       <EmojiPicker
         selectedEmojis={emojis}
         onClick={callback}
-        EMOJI_SELECTION={EMOJI_SELECTION}
+        availableEmojis={EMOJI_SELECTION}
       />,
     );
     fireEvent.click(screen.getByText('+'));

@@ -1,7 +1,6 @@
 import React from 'react';
 import CustomReactions from './CustomReactions';
 import DefaultReactions from './DefaultReactions';
-import { Emoji } from 'lepre';
 
 export default function App() {
   return (

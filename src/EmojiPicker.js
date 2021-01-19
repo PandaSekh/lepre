@@ -11,7 +11,7 @@ export default function EmojiPicker({
 
   let i = 0;
   const emojis = availableEmojis
-    .filter((e) => !selectedEmojis.map((e) => e.emoji).includes(e.emoji))
+    .filter((e) => !selectedEmojis?.map((e) => e.emoji).includes(e.emoji))
     .map((emoji) => {
       return (
         <Emoji
