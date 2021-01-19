@@ -1,7 +1,7 @@
 import React from 'react';
 import emojiEvent from './lib/emojiEvent';
 
-export default function Emoji({ emoji, onClick }) {
+export default function EmojiComponent({ emoji, onClick }) {
   return (
     <span
       className='emoji'

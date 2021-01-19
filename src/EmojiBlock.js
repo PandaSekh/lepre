@@ -3,10 +3,10 @@ import EmojiPicker from './EmojiPicker';
 import EmojiCounter from './EmojiCounter';
 import useEmojis from './lib/useEmojis';
 
-export default function EmojiBlock(props) {
-  const [emojis, increment] = useEmojis();
+export default function EmojiBlock({ emojis, selected = [] }) {
+  const [state, increment] = useEmojis([...selected]);
   let i = 0;
-  const mappedReactions = emojis.map((emoji) => (
+  const mappedReactions = state.map((emoji) => (
     <EmojiCounter
       key={i++}
       emoji={emoji}
@@ -16,15 +16,13 @@ export default function EmojiBlock(props) {
   ));
 
   return (
-    <div className='reaction-div'>
-      <div className='reaction-block'>
-        {mappedReactions}
-        <EmojiPicker
-          selectedEmojis={emojis}
-          onClick={increment}
-          availableEmojis={props.emojis}
-        />
-      </div>
+    <div className='reaction-block'>
+      {mappedReactions}
+      <EmojiPicker
+        selectedEmojis={state}
+        onClick={increment}
+        availableEmojis={emojis}
+      />
     </div>
   );
 }

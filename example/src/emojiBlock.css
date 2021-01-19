@@ -13,11 +13,6 @@
   transition-property: transform;
 }
 
-.reaction-div {
-  display: inline-flex;
-  flex-flow: wrap;
-}
-
 .emoji-container {
   position: relative;
   user-select: none;
