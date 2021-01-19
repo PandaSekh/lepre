@@ -16,6 +16,10 @@
 
 Lepre is a thin and lightweight (<1Kb) emoji picker library for React. It's fully customizable and was inspired by [Github's reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
 
+<p align="center">
+ <img src="https://raw.githubusercontent.com/PandaSekh/lepre/master/example/public/example.gif?token=AIPNRUILOBDDX67IT6RVAIDACCBGK" alt="Lepre Example">
+</p>
+
 * * *
 
 ## Install
@@ -30,9 +34,29 @@ or
 yarn add lepre
 ```
 
-## Examples
+## Index
+- [Examples](#examples)
+  - [Default Reaction Block](#default-reaction-block)
+  - [Custom Component](#custom-component)
+- [Usage](#usage)
+  - [Default Reaction Block](#default-reaction-block)
+  - [Custom Block](#custom-block)
+- [API](#api)
+  - [Emoji (Object)](#emoji)
+  - [Emoji (Event)](#emoji-event)
+  - [useEmojis](#useemojis)
+  - [Reactions](#reactions)
+  - [Emoji (Component)](#emojicomponent)
+  - [EmojiCounter](#emojicounter)
+  - [EmojiPicker](#emojipicker)
+- [Limitations](#limitations)
+- [CSS](#css)
+  - [Starter CSS](#starter-css)
+- [License](#license)
 
-Default component.
+
+## Examples
+### Default Reaction Block
 ```jsx
 import React from 'react';
 
@@ -48,7 +72,7 @@ export default function Example() {
 }
 ```
 
-Custom Component.
+### Custom Component
 ```jsx
 import React from 'react';
 import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
@@ -91,8 +115,9 @@ export default function CustomReactions() {
 `lepre` can be used in two ways, either by importing a single block which handles everything for you, or by importing each component and then do the connections yourself.
 While the first method is plug and play and easy to get started, the latter will give you more flexibility on the layout. 
 
-### Default Block
-To use the default block, import the default Component from `lepre`.
+### Default Reaction Block
+[API Documentation](#reactions).  
+To use the Reaction Block, import the default Component from `lepre`.
 ```jsx
 import React from 'react';
 import Reactions from 'lepre';
@@ -109,8 +134,6 @@ Optionally, it also accepts a `selected` prop, which is an array of emojis alrea
   return <Reactions emojis={MY_EMOJIS} />;
 ```
 
-[API Doc](#reactions).
-
 ### Custom Block
 To create a Custom Block you have to individually import the three building blocks of this library:
 - [EmojiCounter Component](#emojicounter)
@@ -126,7 +149,7 @@ import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 ## API
 - [Emoji (Object)](#emoji)
 - [Emoji (Event)](#emoji-event)
-- [useEmojis](#useEmojis)
+- [useEmojis](#useemojis)
 - [Reactions](#reactions)
 - [Emoji (Component)](#emojicomponent)
 - [EmojiCounter](#emojicounter)
@@ -164,6 +187,16 @@ Event dispatched whenever an emoji gets clicked.
 - `emoji: Emoji` emoji from which the event was dispatched. 
 
 * * *
+
+### `useEmojis`
+```jsx
+const [emojis, increment, decrement] = useEmojis(initialValue);
+```
+
+- `emojis: Array<Emoji>` State. 
+- `increment(Emoji): function` Increment the counter of the given Emoji. 
+- `decrement(Emoji): function` Decrement the counter of the given Emoji. 
+- `initialValue: Array<Emoji>` An initial value for the state. 
 
 ### `Reactions`
 ```jsx
