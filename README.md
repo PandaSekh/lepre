@@ -39,12 +39,12 @@ import React from 'react';
 import Reactions from 'lepre';
 
 export default function Example() {
-  const DEFAULT_EMOJI_OPTIONS = [
+  const MY_EMOJIS = [
     { emoji: '🐼', label: 'panda' },
     { emoji: '📞', label: 'cell' },
   ];
 
-  return <Reactions emojis={DEFAULT_EMOJI_OPTIONS} />;
+  return <Reactions emojis={MY_EMOJIS} />;
 }
 ```
 
@@ -53,7 +53,7 @@ Custom Component.
 import React from 'react';
 import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 
-const DEFAULT_EMOJI_OPTIONS = [
+const MY_EMOJIS = [
   { emoji: '🐼', label: 'panda' },
   { emoji: '📞', label: 'cell' },
 ];
@@ -74,7 +74,7 @@ export default function CustomReactions() {
     <div className='comment'>
       <div className='custom-picker'>
         <EmojiPicker
-            availableEmojis={DEFAULT_EMOJI_OPTIONS}
+            availableEmojis={MY_EMOJIS}
             onClick={increment}
             selectedEmojis={emojis}
           />
@@ -87,12 +87,51 @@ export default function CustomReactions() {
 
 ```
 
+## Usage
+`lepre` can be used in two ways, either by importing a single block which handles everything for you, or by importing each component and then do the connections yourself.
+While the first method is plug and play and easy to get started, the latter will give you more flexibility on the layout. 
+
+### Default Block
+To use the default block, import the default Component from `lepre`.
+```jsx
+import React from 'react';
+import Reactions from 'lepre';
+```
+This Component only requires an `emojis` prop to work. `emojis` is an array of [emoji objects](#emoji) which will be available to be selected.
+Optionally, it also accepts a `selected` prop, which is an array of emojis already selected.
+
+```jsx
+  const MY_EMOJIS = [
+    { emoji: '🐼', label: 'panda' },
+    { emoji: '📞', label: 'cell' },
+  ];
+
+  return <Reactions emojis={MY_EMOJIS} />;
+```
+
+[API Doc](#reactions).
+
+### Custom Block
+To create a Custom Block you have to individually import the three building blocks of this library:
+- [EmojiCounter Component](#emojicounter)
+- [EmojiPicker Component](#emojipicker)
+- [useEmojis Hook](#useemojis)
+
+```jsx
+import React from 'react';
+import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
+```
+
+
 ## API
 - [Emoji (Object)](#emoji)
 - [Emoji (Event)](#emoji-event)
+- [useEmojis](#useEmojis)
 - [Reactions](#reactions)
 - [Emoji (Component)](#emojicomponent)
 - [EmojiCounter](#emojicounter)
+- [EmojiPicker](#emojipicker)
+
 
 ### `Emoji`
 ```jsx
@@ -156,7 +195,7 @@ Component used to render Emojis.
 ```jsx
 import {EmojiCounter} from 'lepre';
 
-const reactionBlock = (
+const counter = (
   <EmojiCounter emoji={{emoji: "🐰", label: "rabbit"}} onClick={myCallback} initialValue={5}/>
 );
 ```
@@ -169,18 +208,46 @@ Component used to render Emojis with a counter near them.
   Initial value of the counter
 - `onClick?: function`
   Optional callback
+  
+  
+### `EmojiPicker`
+```jsx
+import {EmojiPicker} from 'lepre';
+
+const emojisToBeUsed = [
+  {emoji: "🐰", label: "rabbit"},
+  {emoji: "🐻", label: "bear"}
+]
+
+const emojisAlreadySelectedIGotFromTheDatabase = [
+  {emoji: "🐰", label: "rabbit", counter: 10},
+]
+
+const picker = (
+  <EmojiPicker selectedEmojis={emojisAlreadySelectedIGotFromTheDatabase} availableEmojis={emojisToBeUsed} onClick={myCallback} />
+);
+```
+
+Component used to render the Emoji Picker itself.
+
+- `selectedEmojis: Array<Emoji>`
+  Array of Emojis already selected
+- `availableEmojis: Array<Emoji>`
+  Array of all emojis available
+- `onClick?: function`
+  Optional callback
 
 
 ## Limitations
 
-Lepre aims to be fast and thin and because of that it has some limitations:
+`lepre` aims to be fast and thin and because of that it has some limitations:
 
 - Emojis have to be configured first, there are no defaults
 - CSS is not included (but there's a starter CSS in this README!)
 
 ## CSS
 
-Lepre comes with no CSS by default because rarely the stock design will remain unchanged. I thought that no CSS was better than unused CSS.
+`lepre` comes with no CSS by default because rarely the stock design will remain unchanged. I thought that no CSS was better than unused CSS.
 Every component comes with classes already defined that you can use for styling.
 
 - `emoji` Span container of EmojiComponent
@@ -189,6 +256,7 @@ Every component comes with classes already defined that you can use for styling.
 - `emoji-counter` Span container of the counter in EmojiCounter
 - `emoji-menu-open` Class applied to the emoji selection menu when it's opened
 - `emoji-menu-closed` Class applied to the emoji selection menu when it's closed
+- `reaction-block` Div container of the whole library (Default Reactions Block only)
 
 
 ### Starter CSS
