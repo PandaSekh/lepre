@@ -1,18 +1,22 @@
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/emojione/assets/svg/1f63c.svg" width="256" height="256" alt="Rabbit Emoji">
-</p>
   <a href="https://www.npmjs.org/package/lepre">
-  <img src="https://travis-ci.com/PandaSekh/lepre.svg?token=9UEvCKGSQs8hrivJiSpX&branch=master" alt="Travis CI">
-  <img src="https://img.shields.io/npm/v/lepre.svg" alt="npm">
-  <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style">
-</a>
+    <img src="https://travis-ci.com/PandaSekh/lepre.svg?token=9UEvCKGSQs8hrivJiSpX&branch=master" alt="Travis CI">
+    <img src="https://img.shields.io/npm/v/lepre.svg" alt="npm">
+    <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style">
+  </a>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/PandaSekh/lepre/master/example/public/rabbit.png?token=AIPNRUKQUMFQJYCJ4W53OM3ACALSU" width="100" height="100" alt="Rabbit Emoji">
+</p>
 <h1 align="center">
   L.E.P.R.E
-<p align="center">🐰 Lightweight Emoji Picker for React Enthusiasts.</p>
-
 </h1>
 
+<p align="center">🐰 Lightweight Emoji Picker for React Enthusiasts.</p>
+
 Lepre is a thin and lightweight (<1Kb) emoji picker library for React. It's fully customizable and was inspired by [Github's reactions](https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/).
+
+* * *
 
 ## Install
 
