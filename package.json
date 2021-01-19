@@ -17,8 +17,6 @@
     "node": ">=10"
   },
   "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/*.js",
       "src/lib/*.js"
@@ -28,10 +26,10 @@
     "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --format modern,cjs",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build",
+    "test": "run-s test:unit test:lint test:build && codecov --token=e97a8278-183a-4536-97b6-f9873e00df64",
     "test:build": "run-s build",
     "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom --coverage --watchAll=false",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
