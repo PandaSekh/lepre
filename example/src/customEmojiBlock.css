@@ -1,0 +1,13 @@
+.custom-picker {
+  float: right;
+}
+
+.custom-picker .emoji-menu-open {
+  top: 50px;
+  left: 0px;
+  flex-wrap: wrap;
+}
+
+.custom-selection {
+  display: flex;
+}

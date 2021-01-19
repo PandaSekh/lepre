@@ -1,13 +1,26 @@
 import React from 'react';
-import Reactions from './Reactions';
+import CustomReactions from './CustomReactions';
+import DefaultReactions from './DefaultReactions';
+import { Emoji } from 'lepre';
 
 export default function App() {
   return (
-    <div className='comment'>
-      <div>
-        <p>This is a sample comment</p>
+    <div>
+      <h1>
+        <span role='img' aria-label='rabbit'>
+          🐰
+        </span>
+        L.E.P.R.E.
+      </h1>
+      <h3>Lightweight Emoji Picker for React Enthusiasts</h3>
+
+      <div className='content'>
+        <DefaultReactions />
       </div>
-      <Reactions />
+
+      <div className='content'>
+        <CustomReactions />
+      </div>
     </div>
   );
 }

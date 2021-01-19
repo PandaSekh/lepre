@@ -2,7 +2,12 @@
   "name": "lepre",
   "version": "0.1.0",
   "description": "Lightweight Emoji Picker for React Enthusiasts",
-  "author": "PandaSekh",
+  "homepage": "https://pandasekh.github.io/lepre",
+  "author": {
+    "name": "Alessio Franceschi",
+    "email": "alessiofranceschi2@gmail.com",
+    "url": "https://alessiofranceschi.me/"
+  },
   "license": "MIT",
   "repository": "PandaSekh/lepre",
   "main": "dist/index.js",
@@ -29,6 +34,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
+    "@testing-library/react-hooks": "^5.0.0",
     "babel-eslint": "^10.0.3",
     "cross-env": "^7.0.2",
     "eslint": "^6.8.0",

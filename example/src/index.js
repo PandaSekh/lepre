@@ -1,5 +1,6 @@
 import './index.css';
 import './emojiBlock.css';
+import './customEmojiBlock.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';

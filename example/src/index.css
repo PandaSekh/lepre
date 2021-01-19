@@ -17,5 +17,14 @@ code {
   margin: 50px auto auto auto;
   border: 1px solid black;
   width: 70%;
-  padding: 15px
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-style: italic;
 }
