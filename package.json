@@ -16,6 +16,14 @@
   "engines": {
     "node": ">=10"
   },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/*.js",
+      "src/lib/*.js"
+    ]
+  },
   "scripts": {
     "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --format modern,cjs",
