@@ -132,6 +132,7 @@ import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 - [EmojiCounter](#emojicounter)
 - [EmojiPicker](#emojipicker)
 
+* * *
 
 ### `Emoji`
 ```jsx
@@ -151,6 +152,8 @@ Object containing infos about an emoji.
 - `counter?: number`
   Number of times the emoji was selected (Optional) 
 
+* * *
+
 ### `Emoji (Event)`
 ```jsx
 addEventListener("emoji", e => console.log(e.emoji));
@@ -159,6 +162,8 @@ addEventListener("emoji", e => console.log(e.emoji));
 Event dispatched whenever an emoji gets clicked.
 
 - `emoji: Emoji` emoji from which the event was dispatched. 
+
+* * *
 
 ### `Reactions`
 ```jsx
@@ -173,6 +178,8 @@ Default block, already configured and ready to be used anywhere.
   All available emojis.
 - `selected: Array<Emoji>`
   Emojis already selected (taken from a database, from example)
+
+* * *
 
 ### `EmojiComponent`
 ```jsx
@@ -190,6 +197,7 @@ Component used to render Emojis.
 - `onClick?: function`
   Optional callback
 
+* * *
 
 ### `EmojiCounter`
 ```jsx
@@ -209,6 +217,7 @@ Component used to render Emojis with a counter near them.
 - `onClick?: function`
   Optional callback
   
+* * *
   
 ### `EmojiPicker`
 ```jsx
@@ -224,7 +233,9 @@ const emojisAlreadySelectedIGotFromTheDatabase = [
 ]
 
 const picker = (
-  <EmojiPicker selectedEmojis={emojisAlreadySelectedIGotFromTheDatabase} availableEmojis={emojisToBeUsed} onClick={myCallback} />
+  <EmojiPicker  selectedEmojis={emojisAlreadySelectedIGotFromTheDatabase} 
+                availableEmojis={emojisToBeUsed} 
+                onClick={myCallback} />
 );
 ```
 
