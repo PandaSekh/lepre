@@ -6,7 +6,7 @@ function reducer(state, action) {
 
   if (!emojiFromState) {
     emoji.counter = 1;
-    return [...state, emoji].sort((a, b) => (a.counter < b.counter ? 1 : -1));
+    return [...state, emoji];
   } else {
     switch (action.type) {
       case 'increment':
@@ -21,15 +21,12 @@ function reducer(state, action) {
     return [
       ...state.filter((rea) => rea.emoji !== emojiFromState.emoji),
       ...(emojiFromState.counter > 0 ? [emojiFromState] : []),
-    ].sort((a, b) => (a.counter < b.counter ? 1 : -1));
+    ];
   }
 }
 
 export default function useEmojis(initialEmojis = []) {
-  const [emojis, dispatch] = useReducer(
-    reducer,
-    [...initialEmojis].sort((a, b) => (a.counter < b.counter ? 1 : -1)),
-  );
+  const [emojis, dispatch] = useReducer(reducer, [...initialEmojis]);
 
   const increment = (emoji) => dispatch({ type: 'increment', emoji: emoji });
   const decrement = (emoji) => dispatch({ type: 'decrement', emoji: emoji });

@@ -1,5 +1,6 @@
 import React from 'react';
 import CustomReactions from './CustomReactions';
+import CustomReactionsV2 from './CustomReactionsV2';
 import DefaultReactions from './DefaultReactions';
 
 export default function App() {
@@ -19,6 +20,9 @@ export default function App() {
 
       <div className='content'>
         <CustomReactions />
+      </div>
+      <div className='content'>
+        <CustomReactionsV2 />
       </div>
     </div>
   );
