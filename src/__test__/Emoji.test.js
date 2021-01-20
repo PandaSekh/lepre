@@ -13,6 +13,13 @@ describe('Emoji', () => {
     expect(screen.queryByText('🚗')).toBeTruthy();
   });
 
+  it('render without a label', () => {
+    render(<Emoji emoji={{ emoji: '🐯' }} />);
+    expect(screen.queryByText('🐯').getAttribute('aria-label')).toEqual(
+      'Emoji',
+    );
+  });
+
   it('fire onClick callback', () => {
     const handleClick = jest.fn();
     render(

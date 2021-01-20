@@ -54,4 +54,17 @@ describe('EmojiPicker', () => {
       screen.getByTestId('emoji-menu').classList.contains('emoji-menu-open'),
     ).toBeTruthy();
   });
+
+  it('click on an Emoji should run callback', () => {
+    const callback = jest.fn();
+    render(
+      <EmojiPicker
+        selectedEmojis={emojis}
+        onClick={callback}
+        availableEmojis={EMOJI_SELECTION}
+      />,
+    );
+    fireEvent.click(screen.getByText('🦝'));
+    expect(callback).toHaveBeenCalledTimes(1);
+  });
 });

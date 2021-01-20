@@ -147,7 +147,7 @@ import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 
 
 ## API
-- [Emoji (Object)](#emoji)
+- [Emoji (Object)](#emoji-object)
 - [Emoji (Event)](#emoji-event)
 - [useEmojis](#useemojis)
 - [Reactions](#reactions)
@@ -157,7 +157,7 @@ import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 
 * * *
 
-### `Emoji`
+### `Emoji (Object)`
 ```jsx
 const Emoji = {
   emoji: "🐰", 
@@ -214,12 +214,12 @@ Default block, already configured and ready to be used anywhere.
 
 * * *
 
-### `EmojiComponent`
+### `Emoji`
 ```jsx
-import {EmojiComponent} from 'lepre';
+import {Emoji} from 'lepre';
 
-const myEmojiComponent = (
-  <EmojiComponent emoji={{emoji: "🐰", label: "rabbit"}} onClick={myCallback} />
+const myEmoji= (
+  <Emoji emoji={{emoji: "🐰", label: "rabbit"}} onClick={myCallback} />
 );
 ```
 

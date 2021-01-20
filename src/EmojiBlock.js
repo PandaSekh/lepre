@@ -16,7 +16,7 @@ export default function EmojiBlock({ emojis, selected = [] }) {
   ));
 
   return (
-    <div className='reaction-block'>
+    <div className='reaction-block' data-testid='reaction-block'>
       {mappedReactions}
       <EmojiPicker
         selectedEmojis={state}

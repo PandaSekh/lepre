@@ -9,17 +9,32 @@ describe('Emoji', () => {
   });
 
   it('render', () => {
-    let i = 0;
     const funct = jest.fn();
     render(
       <EmojiCounter
-        key={i++}
+        key={0}
         emoji={{ emoji: '🚗', label: 'car' }}
-        initialValue={0}
         onClick={funct}
       />,
     );
     expect(screen.getByTestId('emojiCounter')).toBeTruthy();
+  });
+
+  it('render with initial value', () => {
+    const funct = jest.fn();
+    render(
+      <EmojiCounter
+        key={5}
+        emoji={{ emoji: '🐬', label: 'dolphin' }}
+        onClick={funct}
+      />,
+    );
+    expect(screen.getByText('🐬')).toBeTruthy();
+  });
+
+  it('render with no onCLick callback', () => {
+    render(<EmojiCounter key={10} emoji={{ emoji: '🦍', label: 'gorilla' }} />);
+    expect(screen.getByText('🦍')).toBeTruthy();
   });
 
   it('fire onClick callback', () => {
