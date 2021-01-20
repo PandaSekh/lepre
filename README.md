@@ -8,8 +8,8 @@
 <p align="center">
   <img src="https://travis-ci.com/PandaSekh/lepre.svg?token=9UEvCKGSQs8hrivJiSpX&branch=master" alt="Travis CI">
   <a href="https://www.npmjs.org/package/lepre"><img src="https://img.shields.io/npm/v/lepre.svg" alt="npm"></a>
+  <img src="https://img.badgesize.io/https:/unpkg.com/lepre@0.1.0/dist/index.js?compression=brotli&label=size" alt="Size">
   <img src="https://codecov.io/gh/PandaSekh/lepre/branch/master/graph/badge.svg?token=16CDE37WS5" alt="Code Coverage">
-  <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style">
 </p>
 <p align="center">🐰 Lightweight Emoji Picker for React Enthusiasts.</p>
 
@@ -23,14 +23,19 @@ Lepre is a *lightweight* (**<1Kb**) emoji picker library for React. It's fully c
 
 ## Install
 
+npm: 
 ```bash
 npm install --save lepre
 ```
 
-or
-
+Yarn:
 ```bash
 yarn add lepre
+```
+
+CDN:
+```js
+<sript src="https://unpkg.com/lepre@latest/dist/index.js"></script>
 ```
 
 ## Index
