@@ -1,4 +1,4 @@
-import { Emoji } from '../../dist';
+import { Emoji } from '../index';
 import '@testing-library/jest-dom';
 import * as React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
