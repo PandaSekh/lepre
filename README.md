@@ -6,12 +6,10 @@
   L.E.P.R.E
 </h1>
 <p align="center">
-  <a href="https://www.npmjs.org/package/lepre">
-    <img src="https://travis-ci.com/PandaSekh/lepre.svg?token=9UEvCKGSQs8hrivJiSpX&branch=master" alt="Travis CI">
-    <img src="https://img.shields.io/npm/v/lepre.svg" alt="npm">
-    <img src="https://codecov.io/gh/PandaSekh/lepre/branch/master/graph/badge.svg?token=16CDE37WS5" alt="Code Coverage">
-    <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style">
-  </a>
+  <img src="https://travis-ci.com/PandaSekh/lepre.svg?token=9UEvCKGSQs8hrivJiSpX&branch=master" alt="Travis CI">
+  <a href="https://www.npmjs.org/package/lepre"><img src="https://img.shields.io/npm/v/lepre.svg" alt="npm"></a>
+  <img src="https://codecov.io/gh/PandaSekh/lepre/branch/master/graph/badge.svg?token=16CDE37WS5" alt="Code Coverage">
+  <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="Code Style">
 </p>
 <p align="center">🐰 Lightweight Emoji Picker for React Enthusiasts.</p>
 
