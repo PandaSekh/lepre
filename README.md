@@ -53,6 +53,7 @@ CDN:
   - [Emoji (Component)](#emojicomponent)
   - [EmojiCounter](#emojicounter)
   - [EmojiPicker](#emojipicker)
+- [Demo](#demo)
 - [Limitations](#limitations)
 - [Contribute](#contribute)
   - [To-Do](#to-do)
@@ -351,6 +352,9 @@ Component used to render the Emoji Picker itself.
 - `onClick?: function`
   Optional callback
 
+## Demo
+A basic demo with some example of Custom Blocks is available [here](https://pandasekh.github.io/lepre/).  
+I also use `lepre` on a personal project, check it out here: [Real-Time React Commenting System](https://react-commenting-system.vercel.app/).  
 
 ## Limitations
 
