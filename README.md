@@ -236,9 +236,9 @@ Object containing infos about an emoji.
 - `emoji: string`
   The emoji itself.
 - `label: string`
-  Label of the emoji, used for accessibility reasons
+  Label of the emoji, used for accessibility reasons.
 - `counter?: number`
-  Number of times the emoji was selected (Optional) 
+  Number of times the emoji was selected (Optional).
 
 * * *
 
@@ -275,7 +275,7 @@ Default block, already configured and ready to be used anywhere.
 - `emojis: Array<Emoji>`
   All available emojis.
 - `selected: Array<Emoji>`
-  Emojis already selected (taken from a database, from example)
+  Emojis already selected (taken from a database, from example).
 
 * * *
 
@@ -291,9 +291,9 @@ const myEmoji= (
 Component used to render Emojis.
 
 - `emoji: Emoji`
-  The Emoji to render
+  The Emoji to render.
 - `onClick?: function`
-  Optional callback
+  Optional callback.
 
 * * *
 
