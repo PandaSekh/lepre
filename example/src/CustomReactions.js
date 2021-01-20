@@ -14,14 +14,16 @@ export default function CustomReactions() {
   ]);
 
   let i = 0;
-  const selected = emojis.map((emoji) => (
-    <EmojiCounter
-      key={i++}
-      emoji={emoji}
-      initialValue={emoji.counter}
-      onClick={increment}
-    />
-  ));
+  const selected = emojis
+    .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
+    .map((emoji) => (
+      <EmojiCounter
+        key={i++}
+        emoji={emoji}
+        initialValue={emoji.counter}
+        onClick={increment}
+      />
+    ));
 
   return (
     <div className='comment'>

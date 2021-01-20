@@ -13,7 +13,7 @@ export default function CustomReactions() {
 
   let i = 0;
   const selected = emojis
-    .sort((a, b) => (a.emoji > b.emoji ? 1 : -1))
+    .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
     .map((emoji) => (
       <EmojiCounter
         key={i++}
