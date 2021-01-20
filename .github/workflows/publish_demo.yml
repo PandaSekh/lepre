@@ -19,6 +19,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Publish Demo
       uses: actions/setup-node@v1
-    - run: cd example
-    - run: npm ci
-    - run: npm run start
+    - run: npm run deploy
