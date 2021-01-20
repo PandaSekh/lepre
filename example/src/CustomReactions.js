@@ -3,10 +3,15 @@ import { EmojiCounter, EmojiPicker, useEmojis } from 'lepre';
 
 const DEFAULT_EMOJI_OPTIONS = [
   { emoji: '🐼', label: 'panda' },
-  { emoji: '📞', label: 'cell' },
+  { emoji: '🐰', label: 'rabbit' },
+  { emoji: '🐨', label: 'koala' },
+  { emoji: '🐬', label: 'dolphin' },
 ];
+
 export default function CustomReactions() {
-  const [emojis, increment] = useEmojis();
+  const [emojis, increment] = useEmojis([
+    { emoji: '🐼', label: 'panda', counter: 10 },
+  ]);
 
   let i = 0;
   const selected = emojis.map((emoji) => (

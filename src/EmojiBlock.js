@@ -7,7 +7,7 @@ export default function EmojiBlock({ emojis, selected = [] }) {
   const [state, increment] = useEmojis([...selected]);
   let i = 0;
   const mappedReactions = state
-    .sort((a, b) => (a.emoji > b.emoji ? 1 : -1))
+    .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
     .map((emoji) => (
       <EmojiCounter
         key={i++}

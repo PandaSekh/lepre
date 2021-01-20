@@ -13,6 +13,10 @@ export default function App() {
         L.E.P.R.E.
       </h1>
       <h3>Lightweight Emoji Picker for React Enthusiasts</h3>
+      <h4>
+        <a href='https://github.com/PandaSekh/lepre'>Github</a>
+        <a href='https://www.npmjs.com/package/lepre'>npm</a>
+      </h4>
 
       <div className='content'>
         <DefaultReactions />

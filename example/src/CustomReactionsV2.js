@@ -5,7 +5,9 @@ const DEFAULT_EMOJI_OPTIONS = [
   { emoji: '🐼', label: 'panda', counter: 0 },
   { emoji: '🐰', label: 'rabbit', counter: 5 },
   { emoji: '🐨', label: 'koala', counter: 3 },
+  { emoji: '🐬', label: 'dolphin', counter: 13 },
 ];
+
 export default function CustomReactions() {
   const [emojis, increment] = useEmojis(DEFAULT_EMOJI_OPTIONS);
 
@@ -23,8 +25,16 @@ export default function CustomReactions() {
 
   return (
     <div className='comment'>
-      <p>You can customize the reaction block however you want!</p>
-      <div className='custom-selection'>{selected}</div>
+      <p>
+        Mix and match the components and create your personalized Reaction
+        Block.
+      </p>
+      <div
+        className='custom-selection'
+        style={{ margin: 'auto', width: 'fit-content' }}
+      >
+        {selected}
+      </div>
     </div>
   );
 }
