@@ -1,3 +1,10 @@
+/**
+ * @typedef {Object} Emoji - Object containing infos about an emoji
+ * @property {string} emoji - The emoji itself
+ * @property {string} label - Label of the emoji, used for accessibility reasons
+ * @property {number?} counter - Number of times the emoji was selected
+ */
+
 import { useReducer } from 'react';
 
 export default function useEmojis(initialEmojis = []) {
