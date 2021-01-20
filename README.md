@@ -49,6 +49,8 @@ yarn add lepre
   - [EmojiCounter](#emojicounter)
   - [EmojiPicker](#emojipicker)
 - [Limitations](#limitations)
+- [Contribute](#contribute)
+  - [To-Do](#to-do)
 - [CSS](#css)
   - [Starter CSS](#starter-css)
 - [License](#license)
@@ -351,6 +353,13 @@ Component used to render the Emoji Picker itself.
 
 - Emojis have to be configured first, there are no defaults
 - CSS is not included (but there's a starter CSS in this README!)
+
+## Contribute
+Contributions are welcome! Please submit a pull request for new features or an issue if you find any bug or problem.  
+Please bear in mind that this library is meant to be lightweight first.
+
+### To-Do
+- [ ] Typescript support
 
 ## CSS
 
