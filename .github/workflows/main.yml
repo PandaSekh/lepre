@@ -1,0 +1,19 @@
+name: Publish Demo
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Publish Demo
+      uses: actions/setup-node@v1
+    - run: npm run deploy
