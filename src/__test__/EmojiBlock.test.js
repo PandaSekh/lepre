@@ -27,4 +27,14 @@ describe('Reactions', () => {
     );
     expect(screen.getByTestId('reaction-block')).toBeTruthy();
   });
+
+  it('sort emojis correctly', () => {
+    render(
+      <Reactions
+        emojis={DEFAULT_EMOJI_OPTIONS}
+        selected={[{ emoji: '🐼', label: 'panda', counter: 5 }]}
+      />,
+    );
+    expect(screen.getByTestId('emojiCounter').innerHTML).toContain('🐼');
+  });
 });

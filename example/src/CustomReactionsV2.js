@@ -19,8 +19,8 @@ export default function CustomReactions() {
         initialValue={emoji.counter}
         onClick={increment}
       />
-	));
-	
+    ));
+
   return (
     <div className='comment'>
       <p>You can customize the reaction block however you want!</p>
