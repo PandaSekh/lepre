@@ -9,6 +9,7 @@
   <a href="https://www.npmjs.org/package/lepre"><img src="https://img.shields.io/npm/v/lepre.svg" alt="npm"></a>
   <img src="https://img.badgesize.io/https:/unpkg.com/lepre@latest/dist/index.js?compression=brotli&label=size" alt="Size">
   <img src="https://codecov.io/gh/PandaSekh/lepre/branch/master/graph/badge.svg?token=16CDE37WS5" alt="Code Coverage">
+  <img src="https://david-dm.org/PandaSekh/lepre.svg" alt="Dependencies">
 </p>
 <p align="center">🐰 Lightweight Emoji Picker for React Enthusiasts.</p>
 
