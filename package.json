@@ -1,6 +1,6 @@
 {
   "name": "lepre",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Lightweight Emoji Picker for React Enthusiasts",
   "homepage": "https://pandasekh.github.io/lepre",
   "author": {
@@ -35,7 +35,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": ">=16.8.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.9",
