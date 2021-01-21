@@ -1,5 +1,4 @@
 .emoji {
-  margin: 10px;
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -17,6 +16,7 @@
   position: relative;
   user-select: none;
   display: flex;
+  margin: 10px 0px 10px 10px;
 }
 
 .emoji-counter {
@@ -53,6 +53,10 @@ emoji:active {
   background-color: #fefefe;
   z-index: 10;
   width: auto;
+}
+
+.emoji-menu-open .emoji {
+  margin: 5px;
 }
 
 .emoji-menu-closed {
