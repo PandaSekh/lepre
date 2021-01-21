@@ -8,12 +8,12 @@ const DEFAULT_EMOJI_OPTIONS = [
   { emoji: '🐬', label: 'dolphin' },
 ];
 
-function onUpdateExample(state) {
-  console.log('State Updated');
-  console.log(state);
-}
-
 export default function DefaultReactions() {
+  function onUpdateExample(state) {
+    console.log('State Updated');
+    console.log(state);
+  }
+
   return (
     <div className='comment'>
       <div>
