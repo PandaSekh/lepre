@@ -397,7 +397,6 @@ To help with the design, here's the CSS used in the [Demo project](https://panda
 
 ```css
 .emoji {
-  margin: 10px;
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -414,6 +413,7 @@ To help with the design, here's the CSS used in the [Demo project](https://panda
 .reaction-div {
   display: inline-flex;
   flex-flow: wrap;
+  margin: 10px 0px 10px 10px;
 }
 
 .emoji-container {
@@ -456,6 +456,10 @@ emoji:active {
   background-color: #fefefe;
   z-index: 10;
   width: auto;
+}
+
+.emoji-menu-open .emoji {
+  margin: 5px;
 }
 
 .emoji-menu-closed {

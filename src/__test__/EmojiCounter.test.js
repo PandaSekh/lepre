@@ -46,13 +46,12 @@ describe('Emoji', () => {
         onClick={onClick}
       />,
     );
-    fireEvent.click(screen.getByTestId('emojiCounter'));
+    fireEvent.click(screen.getByText('🚄'));
     expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it('dispatch an Emoji event', () => {
     const handler = jest.fn();
-    document.addEventListener('emoji', handler);
     render(
       <EmojiCounter
         emoji={{ emoji: '🦄', label: 'unicorn' }}
@@ -60,13 +59,12 @@ describe('Emoji', () => {
         onClick={handler}
       />,
     );
-    fireEvent.click(screen.getByTestId('emojiCounter'));
+    fireEvent.click(screen.getByText('🦄'));
     expect(handler).toHaveBeenCalledTimes(1);
   });
 
   it('simulate 10 clicks on Emoji', () => {
     const eventCall = jest.fn();
-    document.addEventListener('emoji', eventCall);
     render(
       <EmojiCounter
         emoji={{ emoji: '🐷', label: 'pig', counter: 0 }}
@@ -74,16 +72,16 @@ describe('Emoji', () => {
         onClick={eventCall}
       />,
     );
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
-    fireEvent.click(screen.getByTestId('emojiCounter'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
+    fireEvent.click(screen.getByText('🐷'));
     expect(eventCall).toHaveBeenCalledTimes(10);
   });
 });
