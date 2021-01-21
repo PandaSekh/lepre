@@ -8,6 +8,11 @@ const DEFAULT_EMOJI_OPTIONS = [
   { emoji: '🐬', label: 'dolphin' },
 ];
 
+function onUpdateExample(state) {
+  console.log('State Updated');
+  console.log(state);
+}
+
 export default function DefaultReactions() {
   return (
     <div className='comment'>
@@ -17,6 +22,7 @@ export default function DefaultReactions() {
       <EmojiBlock
         emojis={DEFAULT_EMOJI_OPTIONS}
         selected={[{ emoji: '🐼', label: 'panda', counter: 3 }]}
+        onUpdate={onUpdateExample}
       />
     </div>
   );

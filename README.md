@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="https://raw.githubusercontent.com/PandaSekh/lepre/master/example/public/rabbit.png?token=AIPNRUKQUMFQJYCJ4W53OM3ACALSU" width="100" height="100" alt="Rabbit Emoji">
 </p>
@@ -59,6 +58,7 @@ CDN:
   - [To-Do](#to-do)
 - [CSS](#css)
   - [Starter CSS](#starter-css)
+- [Changelog](#changelog)
 - [License](#license)
 
 
@@ -75,7 +75,8 @@ export default function Example() {
     { emoji: '📞', label: 'cell' },
   ];
 
-  return <Reactions emojis={MY_EMOJIS} />;
+  return <Reactions emojis={MY_EMOJIS} selected={SELECTED_EMOJIS}
+ />;
 }
 ```
 
@@ -133,7 +134,7 @@ import React from 'react';
 import Reactions from 'lepre';
 ```
 This Component only requires an `emojis` prop to work. `emojis` is an array of [emoji objects](#emoji) which will be available to be selected.
-Optionally, it also accepts a `selected` prop, which is an array of emojis already selected.
+Optionally, it also accepts a `selected` prop, which is an array of emojis already selected, and `onUpdate`, a callback fired whenever the state is updated.
 
 ```jsx
   const MY_EMOJIS = [
@@ -141,7 +142,12 @@ Optionally, it also accepts a `selected` prop, which is an array of emojis alrea
     { emoji: '📞', label: 'cell' },
   ];
 
-  return <Reactions emojis={MY_EMOJIS} />;
+  const onStateUpdate = newState => console.log(newState)
+
+  return <Reactions emojis={MY_EMOJIS} 
+                    selected={SELECTED_EMOJIS} 
+                    onUpdate={onStateUpdate}
+          />;
 ```
 
 ### Custom Block
@@ -280,8 +286,10 @@ Default block, already configured and ready to be used anywhere.
 
 - `emojis: Array<Emoji>`
   All available emojis.
-- `selected: Array<Emoji>`
+- `selected?: Array<Emoji>`
   Emojis already selected (taken from a database, from example).
+- `onUpdate?: function(state)`
+  Fired whenever the state gets update, has the state as parameter.
 
 * * *
 
@@ -454,6 +462,9 @@ emoji:active {
   display: none;
 }
 ```
+
+## Changelog
+See [CHANGELOG.md](https://github.com/PandaSekh/lepre/blob/master/CHANGELOG.md).
 
 ## License
 
