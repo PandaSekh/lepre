@@ -431,8 +431,8 @@ To help with the design, here's the CSS used in the [Demo project](https://panda
   color: #fefefe;
 }
 .emoji:hover,
-emoji:focus,
-emoji:active {
+.emoji:focus,
+.emoji:active {
   transform: scale(1.1);
 }
 
