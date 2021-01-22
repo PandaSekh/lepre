@@ -17,12 +17,16 @@ function reducer(state: EmojiiState, action: EmojiAction) {
       break;
     case 'd':
       emojiFromState.counter--;
-      if (emojiFromState.counter < 0) emojiFromState.counter = 0;
+      if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
   }
-  return [
-    ...state.filter((rea) => rea.emoji !== emojiFromState.emoji),
-    ...(emojiFromState.counter > 0 ? [emojiFromState] : []),
-  ];
+  return state
+    .map((rea) => {
+      if (rea.emoji === emojiFromState.emoji) {
+        return emojiFromState.counter! > 0 ? null : emojiFromState;
+      }
+      return rea;
+    })
+    .filter((e) => e !== null) as IEmoji[];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {

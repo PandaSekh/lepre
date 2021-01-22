@@ -22,7 +22,6 @@ export default function EmojiBlock({
   }, [state]);
 
   const mappedReactions = state
-    .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
     .map((emoji, i) => (
       <EmojiCounter
         key={i}
