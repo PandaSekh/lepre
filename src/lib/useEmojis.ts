@@ -9,10 +9,7 @@ import type {
 
 function reducer(state: EmojiiState, action: EmojiAction) {
   const { emoji } = action;
-  const emojiFromState = state.find((em) => em.emoji === emoji.emoji) || {
-    ...emoji,
-    counter: 0,
-  };
+  const emojiFromState = state.find((em) => em.emoji === emoji.emoji) || emoji;
   emojiFromState.counter = emojiFromState.counter || 0;
   switch (action.type) {
     case 'i':
