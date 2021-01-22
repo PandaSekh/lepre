@@ -12,13 +12,14 @@
   "repository": "PandaSekh/lepre",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "engines": {
     "node": ">=10"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/*/*.{ts,tsx}",
+      "src/lib/*.{ts,tsx}",
+      "src/lib/*.js",
       "src/*.{ts,tsx}"
     ]
   },
