@@ -12,6 +12,7 @@
 
 .custom-selection {
   display: flex;
+  width: min-content;
 }
 
 .emoji-adder {

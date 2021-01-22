@@ -22,6 +22,7 @@
 .emoji-counter {
   font-weight: bold;
   padding: 2px 5px;
+  margin: 3px;
   border-radius: 30%;
   background-color: #f55742;
   color: #fefefe;
