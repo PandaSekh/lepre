@@ -1,5 +1,5 @@
 import { useEmojis } from '../index';
-import { renderHook } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 describe('useEmojis', () => {
   it('should return empty state with no initial values', () => {
@@ -21,7 +21,9 @@ describe('useEmojis', () => {
 
   it('should start counter at 0 if emoji was not in state', () => {
     const { result } = renderHook(() => useEmojis());
-    result.current[1]({ emoji: '🐼', label: 'panda' });
+    act(() => {
+      result.current[1]({ emoji: '🐼', label: 'panda' });
+    });
     expect(result.current[0][0].counter).toBe(1);
   });
 
@@ -29,7 +31,9 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐼', label: 'panda', counter: 5 }]),
     );
-    result.current[1]({ emoji: '🐼', label: 'panda' });
+    act(() => {
+      result.current[1]({ emoji: '🐼', label: 'panda' });
+    });
     expect(result.current[0][0].counter).toBe(6);
   });
 
@@ -37,7 +41,9 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐼', label: 'panda', counter: 5 }]),
     );
-    result.current[2]({ emoji: '🐼', label: 'panda' });
+    act(() => {
+      result.current[2]({ emoji: '🐼', label: 'panda' });
+    });
     expect(result.current[0][0].counter).toBe(4);
   });
 
@@ -45,7 +51,9 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐼', label: 'panda', counter: 1 }]),
     );
-    result.current[2]({ emoji: '🐼', label: 'panda' });
+    act(() => {
+      result.current[2]({ emoji: '🐼', label: 'panda' });
+    });
     expect(result.current[0].length).toBe(0);
   });
 
@@ -53,8 +61,10 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐼', label: 'panda', counter: 0 }]),
     );
-    result.current[2]({ emoji: '🐼', label: 'panda' });
-    result.current[1]({ emoji: '🐼', label: 'panda' });
+    act(() => {
+      result.current[2]({ emoji: '🐼', label: 'panda' });
+      result.current[1]({ emoji: '🐼', label: 'panda' });
+    });
     expect(result.current[0][0].counter).toBe(1);
   });
 });

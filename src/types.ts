@@ -1,6 +1,6 @@
 export interface IEmoji {
   emoji: string | JSX.Element;
-  label: string;
+  label?: string;
   counter?: number;
 }
 

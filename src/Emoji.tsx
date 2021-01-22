@@ -13,7 +13,7 @@ export default function Emoji({
     <span
       className='emoji'
       role='img'
-      aria-label={emoji.label}
+      aria-label={emoji.label || 'Emoji'}
       onClick={() => {
         onClick && onClick();
         document.dispatchEvent(emojiEvent(emoji));

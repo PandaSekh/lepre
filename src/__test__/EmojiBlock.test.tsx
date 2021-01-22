@@ -41,16 +41,18 @@ describe('Reactions', () => {
 
   it('should call onUpdate callback', () => {
     const onUpdate = jest.fn();
-    act(() =>
+    act(() => {
       render(
         <Reactions
           emojis={DEFAULT_EMOJI_OPTIONS}
           selected={[{ emoji: '📞', label: 'cell', counter: 5 }]}
           onUpdate={onUpdate}
         />,
-      ),
-    );
-    act(() => fireEvent.click(screen.getByText('📞')));
+      );
+    });
+    act(() => {
+      fireEvent.click(screen.getByText('📞'));
+    });
     expect(onUpdate).toHaveBeenCalledTimes(2); // First time is after render, second is actually an update
   });
 });

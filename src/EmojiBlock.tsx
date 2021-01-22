@@ -10,7 +10,7 @@ export default function EmojiBlock({
   onUpdate,
 }: {
   emojis: IEmoji[];
-  selected: IEmoji[];
+  selected?: IEmoji[];
   onUpdate?: (state: IEmoji[]) => void;
 }): JSX.Element {
   const [state, increment] = useEmojis([...selected]);
