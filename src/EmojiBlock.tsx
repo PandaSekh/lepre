@@ -25,7 +25,7 @@ export default function EmojiBlock({
     .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
     .map((emoji, i) => (
       <EmojiCounter
-        key={i++}
+        key={i}
         emoji={emoji}
         initialValue={emoji.counter}
         onClick={increment}
