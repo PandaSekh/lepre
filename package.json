@@ -24,7 +24,7 @@
     ]
   },
   "scripts": {
-    "build": "microbundle-crl --jsx --format modern,cjs",
+    "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build && codecov --token=e97a8278-183a-4536-97b6-f9873e00df64",
