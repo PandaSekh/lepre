@@ -9,7 +9,8 @@ import type {
 
 function reducer(state: EmojiiState, action: EmojiAction) {
   const { emoji } = action;
-  const emojiFromState = state.find((em) => em.emoji === emoji.emoji) || emoji;
+  const stateEmoji = state.find((em) => em.emoji === emoji.emoji);
+  const emojiFromState = stateEmoji || emoji;
   emojiFromState.counter = emojiFromState.counter || 0;
   switch (action.type) {
     case 'i':
@@ -19,14 +20,17 @@ function reducer(state: EmojiiState, action: EmojiAction) {
       emojiFromState.counter--;
       if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
   }
-  return state
-    .map((rea) => {
-      if (rea.emoji === emojiFromState.emoji) {
-        return emojiFromState.counter! === 0 ? null : emojiFromState;
-      }
-      return rea;
-    })
-    .filter((e) => e !== null) as IEmoji[];
+  if (stateEmoji) {
+    return state
+      .map((rea) => {
+        if (rea.emoji === emojiFromState.emoji) {
+          return emojiFromState.counter === 0 ? null : emojiFromState;
+        }
+        return rea;
+      })
+      .filter((e) => e !== null) as IEmoji[];
+  }
+  return [...state, emojiFromState];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
