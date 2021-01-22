@@ -18,8 +18,8 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/*.js",
-      "src/lib/*.js"
+      "src/*/*.{ts,tsx}",
+      "src/*.{ts,tsx}"
     ]
   },
   "scripts": {

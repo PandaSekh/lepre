@@ -2,8 +2,19 @@ import React, { useEffect } from 'react';
 import EmojiPicker from './EmojiPicker';
 import EmojiCounter from './EmojiCounter';
 import useEmojis from './lib/useEmojis';
+import { EmojiObject } from './types';
 
-export default function EmojiBlock({ emojis, selected = [], onUpdate }) {
+type EmojiBlockProps = {
+  emojis: Array<EmojiObject>;
+  selected?: Array<EmojiObject>;
+  onUpdate?: Function;
+};
+
+export default function EmojiBlock({
+  emojis,
+  selected = [],
+  onUpdate,
+}: EmojiBlockProps) {
   const [state, increment] = useEmojis([...selected]);
 
   useEffect(() => {

@@ -1,7 +1,13 @@
 import React from 'react';
 import emojiEvent from './lib/emojiEvent';
+import { EmojiObject } from './types';
 
-export default function Emoji({ emoji, onClick }) {
+type Props = {
+  emoji: EmojiObject;
+  onClick?: Function;
+};
+
+export default function Emoji({ emoji, onClick }: Props) {
   return (
     <span
       className='emoji'

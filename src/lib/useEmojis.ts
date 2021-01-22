@@ -1,25 +1,28 @@
-/**
- * @typedef {Object} Emoji - Object containing infos about an emoji
- * @property {string} emoji - The emoji itself
- * @property {string} label - Label of the emoji, used for accessibility reasons
- * @property {number?} counter - Number of times the emoji was selected
- */
-
 import { useReducer } from 'react';
+import { EmojiObject } from '../types';
 
-export default function useEmojis(initialEmojis = []) {
+export default function useEmojis(
+  initialEmojis: Array<EmojiObject> = [],
+): [Array<EmojiObject>, Function, Function] {
   const [emojis, dispatch] = useReducer(reducer, [...initialEmojis]);
 
-  const increment = (emoji) => dispatch({ type: 'i', emoji: emoji });
-  const decrement = (emoji) => dispatch({ type: 'd', emoji: emoji });
+  const increment: Function = (emoji: EmojiObject) =>
+    dispatch({ type: 'i', emoji: emoji });
+  const decrement: Function = (emoji: EmojiObject) =>
+    dispatch({ type: 'd', emoji: emoji });
 
   return [emojis, increment, decrement];
 }
 
-function reducer(state, action) {
+function reducer(
+  state: Array<EmojiObject>,
+  action: {
+    emoji: EmojiObject;
+    type: 'i' | 'd';
+  },
+): Array<EmojiObject> {
   const emoji = action.emoji;
   let emojiFromState = state.filter((em) => em.emoji === emoji.emoji)[0];
-
   if (!emojiFromState) {
     emoji.counter = 0;
     emojiFromState = emoji;
