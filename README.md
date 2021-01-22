@@ -248,8 +248,8 @@ Object containing infos about an emoji.
 
 - `emoji: string`
   The emoji itself.
-- `label: string`
-  Label of the emoji, used for accessibility reasons.
+- `label?: string`
+  Label of the emoji, used for accessibility reasons (Optional).
 - `counter?: number`
   Number of times the emoji was selected (Optional).
 
@@ -381,7 +381,8 @@ Contributions are welcome! Please submit a pull request for new features or an i
 Please bear in mind that this library is meant to be lightweight first.
 
 ### To-Do
-- [ ] Typescript support
+- [x] Typescript support (Thanks to @lodmfjord)
+- [ ] Get 100% Test Coverage (Missing a sort in `EmojiBlock.tsx`)
 
 ## CSS
 
