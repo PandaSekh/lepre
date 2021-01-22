@@ -1,7 +1,16 @@
 import React from 'react';
-import Emoji from './Emoji.js';
+import Emoji from './Emoji';
+import type { IEmoji } from './types';
 
-export default function EmojiCounter({ emoji, initialValue = 0, onClick }) {
+export default function EmojiCounter({
+  emoji,
+  initialValue = 0,
+  onClick,
+}: {
+  emoji: IEmoji;
+  initialValue?: number;
+  onClick?: (emoji: IEmoji) => void;
+}): JSX.Element {
   return (
     <span className='emoji-container' data-testid='emojiCounter'>
       <Emoji
