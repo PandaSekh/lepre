@@ -41,6 +41,7 @@ emoji:active {
   user-select: none;
   position: relative;
   display: inline-block;
+  margin: 5px;
 }
 
 .emoji-menu-open {

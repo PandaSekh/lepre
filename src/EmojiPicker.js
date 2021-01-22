@@ -1,9 +1,10 @@
 import React, { useState, Fragment } from 'react';
-import EmojiComponent from './EmojiComponent.js';
+import Emoji from './Emoji.js';
 
 export default function EmojiPicker({
   selectedEmojis,
   availableEmojis,
+  pickerIcon = '+',
   onClick,
 }) {
   const [open, isOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function EmojiPicker({
     .filter((e) => !selectedEmojis?.map((e) => e.emoji).includes(e.emoji))
     .map((emoji) => {
       return (
-        <EmojiComponent
+        <Emoji
           key={++i}
           emoji={emoji}
           onClick={() => {
@@ -40,9 +41,11 @@ export default function EmojiPicker({
     <Fragment>
       {emojis.length > 0 && (
         <span className='emoji-adder' onClick={toggleOpen}>
-          <EmojiComponent
-            emoji={{ emoji: '+', label: 'emoji-plus' }}
-            onClick={toggleOpen}
+          <Emoji
+            emoji={{
+              emoji: pickerIcon,
+              label: 'emoji-plus',
+            }}
           />
           <EmojiMenu />
         </span>

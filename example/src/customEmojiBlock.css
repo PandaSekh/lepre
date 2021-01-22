@@ -1,5 +1,7 @@
 .custom-picker {
   float: right;
+  width: 35px;
+  height: auto;
 }
 
 .custom-picker .emoji-menu-open {
@@ -10,4 +12,16 @@
 
 .custom-selection {
   display: flex;
+}
+
+.emoji-adder {
+  display: inline;
+}
+
+.emoji {
+  display: inherit;
+}
+
+.emoji-adder:hover #color > path {
+  fill: #fcea2b;
 }
