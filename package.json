@@ -13,18 +13,18 @@
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.ts",
+  "types": "dist/index.d.ts",
   "engines": {
     "node": ">=10"
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/lib/*.{ts,tsx}",
-      "src/lib/*.js",
+      "src/lib/*.{ts,tsx,js}",
       "src/*.{ts,tsx}"
     ]
   },
   "scripts": {
-    "build": "microbundle-crl --format modern,cjs",
+    "build": "microbundle-crl --jsx --format modern,cjs",
     "start": "microbundle-crl watch --format modern,cjs",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build && codecov --token=e97a8278-183a-4536-97b6-f9873e00df64",
