@@ -1,5 +1,11 @@
 import { useReducer } from 'react';
-import { EmojiAction, EmojiFN, EmojiiState, IEmoji, UseEmoji } from '../types';
+import type {
+  EmojiAction,
+  EmojiFN,
+  EmojiiState,
+  IEmoji,
+  UseEmoji,
+} from '../types';
 
 function reducer(state: EmojiiState, action: EmojiAction) {
   const { emoji } = action;

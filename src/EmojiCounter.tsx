@@ -1,6 +1,6 @@
 import React from 'react';
 import Emoji from './Emoji';
-import { IEmoji } from './types';
+import type { IEmoji } from './types';
 
 export default function EmojiCounter({
   emoji,

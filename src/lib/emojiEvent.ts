@@ -1,4 +1,4 @@
-import { IEmoji } from '../types';
+import type { IEmoji } from '../types';
 
 type EmojiEvent = Event & { emoji: IEmoji };
 const emojiEvent = (emoji: IEmoji): EmojiEvent => {

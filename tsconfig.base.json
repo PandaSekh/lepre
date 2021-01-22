@@ -1,9 +1,13 @@
 {
     "compilerOptions": {
-      "target": "esnext",
+      "target": "ESNext",
       "module": "ESNext",
       "strict": true,
       "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "declaration": true,
+      "removeComments": true,
+      "stripInternal": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
@@ -19,6 +23,10 @@
       "isolatedModules": true,
       "noEmit": true
     },
+    "exclude": [
+      "example",
+      "src/__test__"
+    ],
     "include": [
       "src"
     ]

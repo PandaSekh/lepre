@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import Emoji from './Emoji';
-import { IEmoji } from './types';
+import type { IEmoji } from './types';
 
 export default function EmojiPicker({
   selectedEmojis,
@@ -16,13 +16,12 @@ export default function EmojiPicker({
   const [open, isOpen] = useState(false);
   const toggleOpen = () => isOpen(!open);
 
-  let i = 0;
   const emojis = availableEmojis
     .filter((e) => !selectedEmojis?.map((e) => e.emoji).includes(e.emoji))
-    .map((emoji) => {
+    .map((emoji, i) => {
       return (
         <Emoji
-          key={++i}
+          key={i}
           emoji={emoji}
           onClick={() => {
             onClick(emoji);

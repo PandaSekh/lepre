@@ -1,6 +1,6 @@
 import React from 'react';
 import emojiEvent from './lib/emojiEvent';
-import { IEmoji } from './types';
+import type { IEmoji } from './types';
 
 export default function Emoji({
   emoji,
