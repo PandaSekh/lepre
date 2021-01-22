@@ -20,17 +20,18 @@ function reducer(state: EmojiiState, action: EmojiAction) {
       emojiFromState.counter--;
       if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
   }
-  if (stateEmoji) {
-    return state
-      .map((rea) => {
-        if (rea.emoji === emojiFromState.emoji) {
-          return emojiFromState.counter === 0 ? null : emojiFromState;
-        }
-        return rea;
-      })
-      .filter((e) => e !== null) as IEmoji[];
+  if (!stateEmoji) {
+    state.push(emojiFromState);
   }
-  return [...state, emojiFromState];
+
+  return state
+    .map((rea) => {
+      if (rea.emoji === emojiFromState.emoji) {
+        return emojiFromState.counter === 0 ? null : emojiFromState;
+      }
+      return rea;
+    })
+    .filter((e) => e !== null) as IEmoji[];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
