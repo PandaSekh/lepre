@@ -21,14 +21,16 @@ export default function EmojiBlock({
     }
   }, [state]);
 
-  const mappedReactions = state.map((emoji, i) => (
-    <EmojiCounter
-      key={i}
-      emoji={emoji}
-      initialValue={emoji.counter}
-      onClick={increment}
-    />
-  ));
+  const mappedReactions = state
+    .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
+    .map((emoji, i) => (
+      <EmojiCounter
+        key={i}
+        emoji={emoji}
+        initialValue={emoji.counter}
+        onClick={increment}
+      />
+    ));
 
   return (
     <div className='reaction-block' data-testid='reaction-block'>
