@@ -22,7 +22,7 @@ function reducer(state: EmojiiState, action: EmojiAction) {
   return state
     .map((rea) => {
       if (rea.emoji === emojiFromState.emoji) {
-        return emojiFromState.counter! > 0 ? null : emojiFromState;
+        return emojiFromState.counter! === 0 ? null : emojiFromState;
       }
       return rea;
     })
