@@ -19,15 +19,15 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/*.js",
-      "src/lib/*.js"
+      "src/*.{ts,tsx}",
+      "src/lib/*.{ts,tsx}"
     ]
   },
   "scripts": {
     "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --format modern,cjs",
     "prepare": "run-s build",
-    "test": "run-s test:unit test:lint test:build && codecov --token=e97a8278-183a-4536-97b6-f9873e00df64",
+    "test": "run-s test:unit test:lint test:build && codecov",
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom --coverage --watchAll=false",

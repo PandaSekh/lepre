@@ -1,5 +1,6 @@
 import { useReducer } from 'react';
 import { EmojiAction, EmojiFN, EmojiiState, IEmoji, UseEmoji } from '../types';
+
 function reducer(state: EmojiiState, action: EmojiAction) {
   const { emoji } = action;
   const emojiFromState = state.find((em) => em.emoji === emoji.emoji) || {
@@ -12,7 +13,7 @@ function reducer(state: EmojiiState, action: EmojiAction) {
       emojiFromState.counter++;
       break;
     case 'd':
-      emojiFromState.counter++;
+      emojiFromState.counter--;
       if (emojiFromState.counter < 0) emojiFromState.counter = 0;
   }
   return [

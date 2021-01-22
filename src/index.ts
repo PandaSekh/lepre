@@ -1,4 +1,4 @@
-import Emoji from './Emoji.js';
+import Emoji from './Emoji';
 import EmojiPicker from './EmojiPicker';
 import EmojiBlock from './EmojiBlock';
 import EmojiCounter from './EmojiCounter';
