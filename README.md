@@ -348,6 +348,7 @@ const emojisAlreadySelectedIGotFromTheDatabase = [
 const picker = (
   <EmojiPicker  selectedEmojis={emojisAlreadySelectedIGotFromTheDatabase} 
                 availableEmojis={emojisToBeUsed} 
+                pickerIcon="<--"
                 onClick={myCallback} />
 );
 ```
@@ -360,6 +361,9 @@ Component used to render the Emoji Picker itself.
   Array of all emojis available
 - `onClick?: function`
   Optional callback
+- `pickerIcon = "👍": string || svg`
+  Optional custom icon for the picker. Accepts a string (including emojis)
+  or an svg object.
 
 ## Demo
 A basic demo with some example of Custom Blocks is available [here](https://pandasekh.github.io/lepre/).  
@@ -394,7 +398,8 @@ Every component comes with classes already defined that you can use for styling.
 
 
 ### Starter CSS
-To help with the design, here's the CSS used in the [Demo project](https://pandasekh.github.io/lepre/).
+To help with the design, here's the CSS used in the [Demo project](https://pandasekh.github.io/lepre/) for the Default Component.
+In the `example/src` folder of this repo you can find the styles for the other blocks.
 
 ```css
 .emoji {

@@ -1,10 +1,10 @@
 import React from 'react';
-import EmojiComponent from './EmojiComponent.js';
+import Emoji from './Emoji.js';
 
 export default function EmojiCounter({ emoji, initialValue = 0, onClick }) {
   return (
     <span className='emoji-container' data-testid='emojiCounter'>
-      <EmojiComponent
+      <Emoji
         emoji={emoji}
         onClick={onClick ? () => onClick(emoji) : undefined}
       />
