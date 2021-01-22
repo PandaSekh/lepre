@@ -9,7 +9,7 @@ const DEFAULT_EMOJI_OPTIONS = [
 ];
 
 export default function DefaultReactions() {
-  function onUpdateExample(state) {
+  function onUpdateExample(state: any) {
     console.log('State Updated');
     console.log(state);
   }

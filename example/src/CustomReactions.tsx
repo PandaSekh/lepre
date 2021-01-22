@@ -13,12 +13,11 @@ export default function CustomReactions() {
     { emoji: '🐼', label: 'panda', counter: 10 },
   ]);
 
-  let i = 0;
   const selected = emojis
     .sort((a, b) => (a.emoji < b.emoji ? 1 : -1))
-    .map((emoji) => (
+    .map((emoji, i) => (
       <EmojiCounter
-        key={i++}
+        key={i}
         emoji={emoji}
         initialValue={emoji.counter}
         onClick={increment}

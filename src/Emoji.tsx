@@ -1,7 +1,14 @@
 import React from 'react';
 import emojiEvent from './lib/emojiEvent';
+import { IEmoji } from './types';
 
-export default function Emoji({ emoji, onClick }) {
+export default function Emoji({
+  emoji,
+  onClick,
+}: {
+  emoji: IEmoji;
+  onClick?: () => void;
+}): JSX.Element {
   return (
     <span
       className='emoji'

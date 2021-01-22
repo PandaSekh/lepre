@@ -1,12 +1,18 @@
 import React, { useState, Fragment } from 'react';
 import Emoji from './Emoji.js';
+import { IEmoji } from './types.js';
 
 export default function EmojiPicker({
   selectedEmojis,
   availableEmojis,
   pickerIcon = '+',
   onClick,
-}) {
+}: {
+  selectedEmojis: IEmoji[];
+  availableEmojis: IEmoji[];
+  pickerIcon?: string | JSX.Element;
+  onClick: (emoji: IEmoji) => void;
+}): JSX.Element {
   const [open, isOpen] = useState(false);
   const toggleOpen = () => isOpen(!open);
 
