@@ -27,8 +27,6 @@
       "example",
       "src/__test__"
     ],
-    "include": [
-      "src"
-    ]
+    "include": ["src/index.ts", "src/types.ts"]
   }
-  
+
