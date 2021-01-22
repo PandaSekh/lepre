@@ -4,6 +4,7 @@ import EmojiComponent from './EmojiComponent.js';
 export default function EmojiPicker({
   selectedEmojis,
   availableEmojis,
+  pickerIcon = '+',
   onClick,
 }) {
   const [open, isOpen] = useState(false);
@@ -41,8 +42,10 @@ export default function EmojiPicker({
       {emojis.length > 0 && (
         <span className='emoji-adder' onClick={toggleOpen}>
           <EmojiComponent
-            emoji={{ emoji: '+', label: 'emoji-plus' }}
-            onClick={toggleOpen}
+            emoji={{
+              emoji: pickerIcon,
+              label: 'emoji-plus',
+            }}
           />
           <EmojiMenu />
         </span>

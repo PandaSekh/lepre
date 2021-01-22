@@ -31,6 +31,7 @@ export default function CustomReactions() {
         <EmojiPicker
           availableEmojis={DEFAULT_EMOJI_OPTIONS}
           onClick={increment}
+          pickerIcon='🎶'
           selectedEmojis={emojis}
         />
       </div>
