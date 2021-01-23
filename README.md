@@ -380,9 +380,12 @@ I also use `lepre` on a personal project, check it out here: [Real-Time React Co
 Contributions are welcome! Please submit a pull request for new features or an issue if you find any bug or problem.  
 Please bear in mind that this library is meant to be lightweight first.
 
+### Contributors
+- [@lodmfjord](https://github.com/lodmfjord) - Typescript, Size Improvements
+
 ### To-Do
 - [x] Typescript support (Thanks to @lodmfjord)
-- [ ] Get 100% Test Coverage (Missing a sort in `EmojiBlock.tsx`)
+- [x] Get 100% Test Coverage (Thanks to @lodmfjord)
 
 ## CSS
 
