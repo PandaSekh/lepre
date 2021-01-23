@@ -20,7 +20,6 @@ function reducer(state: EmojiiState, action: EmojiAction) {
     case 'd':
       emojiFromState.counter--;
   }
-  if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
 
   if (!stateEmoji) {
     state.push(emojiFromState);
@@ -28,9 +27,11 @@ function reducer(state: EmojiiState, action: EmojiAction) {
 
   return state
     .map((rea) => {
-      return rea.emoji === emojiFromState.emoji ? emojiFromState : rea;
+      return (rea.emoji === emojiFromState.emoji
+        ? emojiFromState
+        : rea) as FullIEmoji;
     })
-    .filter((emoji) => emoji.counter !== 0) as FullIEmoji[];
+    .filter((emoji) => emoji.counter > 0) as FullIEmoji[];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
