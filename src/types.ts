@@ -3,7 +3,7 @@ export interface IEmoji {
   label?: string;
   counter?: number;
 }
-
+export type FullIEmoji = Required<Pick<IEmoji, 'counter'>> & IEmoji;
 export type EmojiFN = (emoji: IEmoji) => void;
 
 export type UseEmoji = [IEmoji[], EmojiFN, EmojiFN];
