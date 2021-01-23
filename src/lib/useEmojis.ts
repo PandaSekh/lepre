@@ -18,8 +18,9 @@ function reducer(state: EmojiiState, action: EmojiAction) {
       break;
     case 'd':
       emojiFromState.counter--;
-      if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
   }
+  if (emojiFromState.counter <= 0) emojiFromState.counter = 0;
+
   if (!stateEmoji) {
     state.push(emojiFromState);
   }
