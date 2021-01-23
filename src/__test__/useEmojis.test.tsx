@@ -34,7 +34,7 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐈', label: 'cat', counter: -10 }]),
     );
-    const [emojis, incr, decr] = result.current;
+    const [emojis, incr] = result.current;
     act(() => {
       incr({ emoji: '🐈', label: 'cat' });
     });
@@ -80,5 +80,18 @@ describe('useEmojis', () => {
       result.current[1]({ emoji: '🐼', label: 'panda' });
     });
     expect(result.current[0][0].counter).toBe(1);
+  });
+
+  it('should filter correctly emojis if they were already in state', () => {
+    const { result } = renderHook(() =>
+      useEmojis([{ emoji: '🐼', label: 'panda', counter: 4 }]),
+    );
+    const [emojis, incr, decr] = result.current;
+    act(() => {
+      incr({ emoji: '🐶', label: 'dog' });
+      decr({ emoji: '🐼', label: 'panda' });
+    });
+    expect(emojis[0].counter).toBe(3);
+    expect(emojis[1].counter).toBe(1);
   });
 });
