@@ -26,12 +26,9 @@ function reducer(state: EmojiiState, action: EmojiAction) {
 
   return state
     .map((rea) => {
-      if (rea.emoji === emojiFromState.emoji) {
-        return emojiFromState.counter === 0 ? null : emojiFromState;
-      }
-      return rea;
+      return rea.emoji === emojiFromState.emoji ? emojiFromState : rea;
     })
-    .filter((e) => e !== null) as IEmoji[];
+    .filter((emoji) => emoji.counter !== 0) as IEmoji[];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
