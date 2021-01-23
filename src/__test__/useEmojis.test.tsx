@@ -34,11 +34,25 @@ describe('useEmojis', () => {
     const { result } = renderHook(() =>
       useEmojis([{ emoji: '🐈', label: 'cat', counter: -10 }]),
     );
-    const [emojis, incr] = result.current;
+    const [, incr] = result.current;
     act(() => {
       incr({ emoji: '🐈', label: 'cat' });
     });
-    expect(emojis[0].counter).toBe(0);
+    expect(result.current[0].length).toBe(0);
+  });
+
+  it('should display emoji if counter goes over 0', () => {
+    const { result } = renderHook(() =>
+      useEmojis([{ emoji: '🐈', label: 'cat', counter: -3 }]),
+    );
+    const [, incr] = result.current;
+    act(() => {
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+    });
+    expect(result.current[0].length).toBe(1);
   });
 
   it('should increment counter', () => {
