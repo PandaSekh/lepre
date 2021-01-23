@@ -3,6 +3,7 @@ import type {
   EmojiAction,
   EmojiFN,
   EmojiiState,
+  FullIEmoji,
   IEmoji,
   UseEmoji,
 } from '../types';
@@ -28,14 +29,15 @@ function reducer(state: EmojiiState, action: EmojiAction) {
     .map((rea) => {
       return rea.emoji === emojiFromState.emoji ? emojiFromState : rea;
     })
-    .filter((emoji) => emoji.counter !== 0) as IEmoji[];
+    .filter((emoji) => emoji.counter !== 0) as FullIEmoji[];
 }
 
 export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
-  const [emojis, dispatch] = useReducer(reducer, [...initialEmojis]);
-
+  const [emojis, dispatch] = useReducer(reducer, [
+    ...initialEmojis,
+    /* Forces correct typing of state, but still accepts inital state without counter. */
+  ] as FullIEmoji[]);
   const increment: EmojiFN = (emoji) => dispatch({ type: 'i', emoji: emoji });
   const decrement: EmojiFN = (emoji) => dispatch({ type: 'd', emoji: emoji });
-
   return [emojis, increment, decrement];
 }
