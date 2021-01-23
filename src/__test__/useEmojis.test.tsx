@@ -1,6 +1,9 @@
 import { useEmojis } from '../index';
 import { act, renderHook } from '@testing-library/react-hooks';
 
+/**
+ * We can't destructure the reducer, so we have to use it's indexes instead.
+ */
 describe('useEmojis', () => {
   it('should return empty state with no initial values', () => {
     const { result } = renderHook(() => useEmojis());
@@ -25,6 +28,31 @@ describe('useEmojis', () => {
       result.current[1]({ emoji: '🐼', label: 'panda' });
     });
     expect(result.current[0][0].counter).toBe(1);
+  });
+
+  it('should not break if counter starts below 0', () => {
+    const { result } = renderHook(() =>
+      useEmojis([{ emoji: '🐈', label: 'cat', counter: -10 }]),
+    );
+    const [, incr] = result.current;
+    act(() => {
+      incr({ emoji: '🐈', label: 'cat' });
+    });
+    expect(result.current[0].length).toBe(0);
+  });
+
+  it('should display emoji if counter goes over 0', () => {
+    const { result } = renderHook(() =>
+      useEmojis([{ emoji: '🐈', label: 'cat', counter: -3 }]),
+    );
+    const [, incr] = result.current;
+    act(() => {
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+      incr({ emoji: '🐈', label: 'cat' });
+    });
+    expect(result.current[0].length).toBe(1);
   });
 
   it('should increment counter', () => {
@@ -66,5 +94,18 @@ describe('useEmojis', () => {
       result.current[1]({ emoji: '🐼', label: 'panda' });
     });
     expect(result.current[0][0].counter).toBe(1);
+  });
+
+  it('should filter correctly emojis if they were already in state', () => {
+    const { result } = renderHook(() =>
+      useEmojis([{ emoji: '🐼', label: 'panda', counter: 4 }]),
+    );
+    const [emojis, incr, decr] = result.current;
+    act(() => {
+      incr({ emoji: '🐶', label: 'dog' });
+      decr({ emoji: '🐼', label: 'panda' });
+    });
+    expect(emojis[0].counter).toBe(3);
+    expect(emojis[1].counter).toBe(1);
   });
 });
