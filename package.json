@@ -1,6 +1,6 @@
 {
   "name": "lepre",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Lightweight Emoji Picker for React Enthusiasts",
   "homepage": "https://pandasekh.github.io/lepre",
   "author": {
@@ -11,7 +11,9 @@
   "license": "MIT",
   "repository": "PandaSekh/lepre",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "esmodule": "dist/index.modern.js",
+  "unpkg": "dist/index.umd.js",
+  "module": "dist/index.module.js",
   "source": "src/index.ts",
   "types": "./dist/index.d.ts",
   "engines": {
@@ -24,8 +26,8 @@
     ]
   },
   "scripts": {
-    "build": "microbundle-crl --format modern,cjs --tsconfig ./tsconfig.build.json",
-    "start": "microbundle-crl watch --format modern,cjs --tsconfig ./tsconfig.build.json",
+    "build": "microbundle-crl --tsconfig ./tsconfig.build.json",
+    "start": "microbundle-crl watch --tsconfig ./tsconfig.build.json",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build && codecov",
     "test:build": "run-s build",
