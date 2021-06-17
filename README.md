@@ -93,12 +93,11 @@ const MY_EMOJIS = [
 export default function CustomReactions() {
   const [emojis, increment] = useEmojis();
 
-  let i = 0;
   const selected = emojis
     .sort((a, b) => (a.emoji < b.emoji ? 1 : -1)) // No sorting is applied by default
     .map((emoji) => (
       <EmojiCounter
-        key={i++}
+        key={emoji.label}
         emoji={emoji}
         initialValue={emoji.counter}
         onClick={increment}
@@ -173,12 +172,11 @@ const [emojis, increment, decrement] = useEmojis(emojisFromDatabase);
 Map the emojis with the EmojiCounter Component.
 
 ```jsx
-let i = 0;
 const mappedEmojis = emojis
   .sort((a, b) => (a.emoji < b.emoji ? 1 : -1)) // This is optional, but recommended
   .map((emoji) => (
     <EmojiCounter
-      key={i++}
+      key={emoji.label}
       emoji={emoji}
       initialValue={emoji.counter}
       onClick={increment}
