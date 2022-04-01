@@ -27,9 +27,9 @@ function reducer(state: EmojiiState, action: EmojiAction) {
 
   return state
     .map((rea) => {
-      return (rea.emoji === emojiFromState.emoji
-        ? emojiFromState
-        : rea) as FullIEmoji;
+      return (
+        rea.emoji === emojiFromState.emoji ? emojiFromState : rea
+      ) as FullIEmoji;
     })
     .filter((emoji) => emoji.counter > 0) as FullIEmoji[];
 }
