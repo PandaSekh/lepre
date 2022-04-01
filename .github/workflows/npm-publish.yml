@@ -12,7 +12,7 @@ jobs:
       with:
         node-version: '16.x'
         registry-url: 'http://registry.npmjs.org'
-    - run: npm install
+    - run: npm install --legacy-peer-deps
     - run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
