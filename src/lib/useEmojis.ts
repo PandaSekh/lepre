@@ -39,7 +39,7 @@ export default function useEmojis(initialEmojis: IEmoji[] = []): UseEmoji {
     ...initialEmojis,
     /* Forces correct typing of state, but still accepts inital state without counter. */
   ] as FullIEmoji[]);
-  const increment: EmojiFN = (emoji) => dispatch({ type: 'i', emoji: emoji });
-  const decrement: EmojiFN = (emoji) => dispatch({ type: 'd', emoji: emoji });
+  const increment: EmojiFN = emoji => dispatch({ type: 'i', emoji: emoji });
+  const decrement: EmojiFN = emoji => dispatch({ type: 'd', emoji: emoji });
   return [emojis, increment, decrement];
 }
