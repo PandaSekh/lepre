@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useRef, useEffect } from 'react';
 import Emoji from './Emoji';
 import type { IEmoji } from './types';
 
@@ -15,6 +15,20 @@ export default function EmojiPicker({
 }): JSX.Element {
   const [open, isOpen] = useState(false);
   const toggleOpen = () => isOpen(!open);
+  const blockRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: Event) => {
+    if (blockRef.current && !blockRef.current.contains(event.target as Node)) {
+      toggleOpen();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
 
   const emojis = availableEmojis
     .filter((e) => !selectedEmojis?.map((e) => e.emoji).includes(e.emoji))
@@ -36,6 +50,7 @@ export default function EmojiPicker({
       <div
         className={open ? 'emoji-menu-open' : 'emoji-menu-closed'}
         data-testid='emoji-menu'
+        ref={blockRef}
       >
         {emojis}
       </div>
