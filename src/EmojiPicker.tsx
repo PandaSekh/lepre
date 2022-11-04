@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useRef, useEffect } from 'react';
 import Emoji from './Emoji';
 import type { IEmoji } from './types';
 
@@ -15,6 +15,8 @@ export default function EmojiPicker({
 }): JSX.Element {
   const [open, isOpen] = useState(false);
   const toggleOpen = () => isOpen(!open);
+  const blockRef = useRef<HTMLDivElement>(null);
+  useFunctionOnOutsideClick(blockRef, toggleOpen);
 
   const emojis = availableEmojis
     .filter((e) => !selectedEmojis?.map((e) => e.emoji).includes(e.emoji))
@@ -36,6 +38,7 @@ export default function EmojiPicker({
       <div
         className={open ? 'emoji-menu-open' : 'emoji-menu-closed'}
         data-testid='emoji-menu'
+        ref={blockRef}
       >
         {emojis}
       </div>
@@ -57,4 +60,18 @@ export default function EmojiPicker({
       )}
     </Fragment>
   );
+}
+
+function useFunctionOnOutsideClick(ref: React.RefObject<any>, func: () => void) {
+  useEffect(() => {
+    function handleClickOutside(event: Event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        alert("You clicked outside of me!");
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
 }
