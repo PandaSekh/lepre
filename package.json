@@ -43,7 +43,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.9",
     "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^13.0.0",
+    "@testing-library/react": "^14.0.0",
     "@testing-library/react-hooks": "^8.0.1",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
